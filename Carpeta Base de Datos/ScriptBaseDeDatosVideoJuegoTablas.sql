@@ -25,7 +25,7 @@ CREATE TABLE Carta (
     Ataque TINYINT UNSIGNED NOT NULL CHECK(Ataque > 0),
     Mediocampo TINYINT UNSIGNED NOT NULL CHECK(Mediocampo > 0),
     Defensa TINYINT UNSIGNED NOT NULL CHECK(Defensa > 0),
-    Energia TINYINT UNSIGNED NOT NULL CHECK(Energia > 0),
+    Costo INT UNSIGNED NOT NULL CHECK(Costo > 0),
     Fecha_Creacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     Fecha_Ultima_Modificacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id_carta),
@@ -35,16 +35,21 @@ CREATE TABLE Carta (
 CREATE TABLE Formacion (
 	id_formacion INT UNSIGNED NOT NULL AUTO_INCREMENT,
     TipoDeFormacion VARCHAR(25) NOT NULL,
-    Descripcion VARCHAR(255),
+    Pos1 VARCHAR(5) NOT NULL,
+    Cord1 VARCHAR(25) NOT NULL,
+    Pos2 VARCHAR(5) NOT NULL,
+    Cord2 VARCHAR(25) NOT NULL,
+    Pos3 VARCHAR(5) NOT NULL,
+    Cord3 VARCHAR(25) NOT NULL,
+    Pos4 VARCHAR(5) NOT NULL,
+    Cord4 VARCHAR(25) NOT NULL,
+    Pos5 VARCHAR(5) NOT NULL,
+    Cord5 VARCHAR(25) NOT NULL,
+    Pos6 VARCHAR(5) NOT NULL,
+    Cord6 VARCHAR(25) NOT NULL,
+    Pos7 VARCHAR(5) NOT NULL,
+    Cord7 VARCHAR(25) NOT NULL,
     PRIMARY KEY (id_formacion)
-);
-
-CREATE TABLE TacticaJuego (
-	id_tactica_juego INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    id_usuario INT UNSIGNED,
-    id_formacion INT UNSIGNED,
-    PRIMARY KEY (id_tactica_juego),
-    CONSTRAINT fk_tacticaJuego_formacion FOREIGN KEY (id_formacion) REFERENCES Formacion(id_formacion) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 CREATE TABLE Usuario (
@@ -56,13 +61,13 @@ CREATE TABLE Usuario (
     Victorias INT UNSIGNED NOT NULL,
     Derrotas INT UNSIGNED NOT NULL,
     Empates INT UNSIGNED NOT NULL,
+    Progreso INT UNSIGNED NOT NULL DEFAULT 400,
     esBot BOOLEAN NOT NULL,
+    CantidadDineroPartida INT NOT NULL CHECK (CantidadDineroPartida > 0),
     Fecha_Creacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     Fecha_Ultima_Modificacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id_usuario)
 );
-
-ALTER TABLE TacticaJuego ADD CONSTRAINT fk_tacticaJuego_usuario FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- CREATE TABLE Inventario (
 -- id_inventario INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -95,13 +100,19 @@ ALTER TABLE InventarioCarta ADD CONSTRAINT fk_inventarioCarta_carta FOREIGN KEY 
 CREATE TABLE Partido (
 	id_partido INT UNSIGNED NOT NULL AUTO_INCREMENT,
     id_jugador1 INT UNSIGNED,
+    id_formacion_jugador1 INT UNSIGNED,
     id_jugador2 INT UNSIGNED,
+    id_formacion_jugador2 INT UNSIGNED,
     id_ganador INT UNSIGNED,
+    id_formacion_ganador INT UNSIGNED,
     Resultado VARCHAR(5) NOT NULL,
     PRIMARY KEY (id_partido),
     CONSTRAINT fk_jugador1 FOREIGN KEY (id_jugador1) REFERENCES Usuario(id_usuario) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_formacion_jugador1 FOREIGN KEY (id_formacion_jugador1) REFERENCES Formacion(id_formacion) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT fk_jugador2 FOREIGN KEY (id_jugador2) REFERENCES Usuario(id_usuario) ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT fk_ganador FOREIGN KEY (id_ganador) REFERENCES Usuario(id_usuario) ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT fk_formacion_jugador2 FOREIGN KEY (id_formacion_jugador2) REFERENCES Formacion(id_formacion) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_ganador FOREIGN KEY (id_ganador) REFERENCES Usuario(id_usuario) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_formacion_ganador FOREIGN KEY (id_formacion_ganador) REFERENCES Formacion(id_formacion) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 CREATE TABLE Turno (

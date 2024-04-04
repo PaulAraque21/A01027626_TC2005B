@@ -13,38 +13,38 @@ VALUES
 SELECT * FROM Equipo;
 
 -- Insertar Datos Tabla Carta
-INSERT INTO Carta (Nombre, Posicion, Ataque, Mediocampo, Defensa, Energia, id_equipo) 
+INSERT INTO Carta (Nombre, Posicion, Ataque, Mediocampo, Defensa, Costo, id_equipo) 
 VALUES 
-('Thibaut Courtois', 'PO', 32, 40, 86, 6, 1),
-('Andriv Lunin', 'PO', 30, 37, 82, 3, 1),
-('Kepa Arrizabalaga', 'PO', 31, 38, 80, 2, 1),
-('Dani Carvajal', 'LD', 77, 80, 84, 4, 1),
-('Lucas Vázquez', 'LD', 74, 78, 81, 2, 1),
-('Eder Militao', 'DFC', 69, 72, 87, 6, 1),
-('Antonio Rudiger', 'DFC', 66, 69, 86, 5, 1),
-('David Alaba', 'DFC', 72, 80, 84, 4, 1),
-('Nacho Fernández', 'DFC', 62, 69, 82, 2, 1),
-('Ferland Mendy', 'LI', 70, 76, 84, 3, 1),
-('Fran García', 'LI', 70, 74, 81, 2, 1),
-('Aurelian Tchouaméni', 'MC', 76, 82, 84, 4, 1),
-('Eduardo Camaving', 'MC', 81, 84, 82, 3, 1),
-('Toni Kroos', 'MC', 83, 86, 80, 5, 1),
-('Federico Valverde', 'MC', 84, 86, 85, 5, 1),
-('Luka Modric', 'MC', 84, 86, 84, 5, 1),
-('Dani Ceballos', 'MC', 79, 80, 73, 1, 1),
-('Arda Guller', 'MC', 80, 80, 74, 1, 1),
-('Jude Bellingham', 'MC', 85, 88, 82, 7, 1),
-('Vinicius Jr', 'EI', 89, 82, 51, 8, 1),
-('Rodrygo Goes', 'ED', 85, 81, 57, 5, 1),
-('Brahim Díaz', 'ED', 84, 80, 56, 3, 1),
-('Joselu Mato', 'DC', 82, 76, 54, 2, 1),
-('Ter Stegen', 'PO', 34, 40, 85, 5, 2),
-('Iñaki Peña', 'PO', 22, 34, 77, 1, 2),
-('João Cancelo', 'LD', 79, 81, 82, 2, 2),
-('Sergi Roberto', 'LD', 64, 71, 79, 1, 2),
-('Ronald Araújo', 'DFC', 66, 70, 86, 6, 2),
-('Jules Koundé', 'DFC', 67, 71, 84, 4, 2),
-('Iñigo Martínez', 'DFC', 60, 67, 82, 2, 2);
+('Thibaut Courtois', 'PO', 32, 40, 86, 60, 1),
+('Andriv Lunin', 'PO', 30, 37, 82, 30, 1),
+('Kepa Arrizabalaga', 'PO', 31, 38, 80, 20, 1),
+('Dani Carvajal', 'LD', 77, 80, 84, 40, 1),
+('Lucas Vázquez', 'LD', 74, 78, 81, 20, 1),
+('Eder Militao', 'DFC', 69, 72, 87, 60, 1),
+('Antonio Rudiger', 'DFC', 66, 69, 86, 50, 1),
+('David Alaba', 'DFC', 72, 80, 84, 40, 1),
+('Nacho Fernández', 'DFC', 62, 69, 82, 20, 1),
+('Ferland Mendy', 'LI', 70, 76, 84, 30, 1),
+('Fran García', 'LI', 70, 74, 81, 20, 1),
+('Aurelian Tchouaméni', 'MC', 76, 82, 84, 40, 1),
+('Eduardo Camaving', 'MC', 81, 84, 82, 30, 1),
+('Toni Kroos', 'MC', 83, 86, 80, 50, 1),
+('Federico Valverde', 'MC', 84, 86, 85, 50, 1),
+('Luka Modric', 'MC', 84, 86, 84, 50, 1),
+('Dani Ceballos', 'MC', 79, 80, 73, 10, 1),
+('Arda Guller', 'MC', 80, 80, 74, 10, 1),
+('Jude Bellingham', 'MC', 85, 88, 82, 70, 1),
+('Vinicius Jr', 'EI', 89, 82, 51, 80, 1),
+('Rodrygo Goes', 'ED', 85, 81, 57, 50, 1),
+('Brahim Díaz', 'ED', 84, 80, 56, 30, 1),
+('Joselu Mato', 'DC', 82, 76, 54, 20, 1),
+('Ter Stegen', 'PO', 34, 40, 85, 50, 2),
+('Iñaki Peña', 'PO', 22, 34, 77, 10, 2),
+('João Cancelo', 'LD', 79, 81, 82, 20, 2),
+('Sergi Roberto', 'LD', 64, 71, 79, 10, 2),
+('Ronald Araújo', 'DFC', 66, 70, 86, 60, 2),
+('Jules Koundé', 'DFC', 67, 71, 84, 40, 2),
+('Iñigo Martínez', 'DFC', 60, 67, 82, 20, 2);
 -- Consulta Tabla Carta
 SELECT * FROM Carta;
 
@@ -54,38 +54,38 @@ FROM Carta
 JOIN Equipo ON Carta.id_equipo = Equipo.id_equipo;
 
 -- Insertar Datos Tabla Usuario
-INSERT INTO Usuario (Nombre, Contrasena, Monedas, Victorias, Derrotas, Empates, esBot)
+INSERT INTO Usuario (Nombre, Contrasena, Monedas, Victorias, Derrotas, Empates, Progreso, esBot, cantidadDineroPartida)
 VALUES
-('Paul', 'pass1', 1003, 23, 4, 1, FALSE),
-('Diego', 'pass2', 243, 12, 14, 2, FALSE),
-('Beto', 'pass3', 100, 3, 12, 0, FALSE),
-('CPU1', 'pass4', 0, 2, 1, 0, TRUE),
-('Paolo', 'pass5', 200, 5, 2, 0, FALSE),
-('CPU2', 'pass6', 0, 1, 4, 0, TRUE),
-('CPU3', 'pass7', 0, 10, 2, 0, TRUE),
-('CPU4', 'pass8', 0, 17, 1, 0, TRUE),
-('CPU5', 'pass9', 0, 15, 1, 0, TRUE),
-('CPU6', 'pass10', 0, 14, 1, 0, TRUE),
-('CPU7', 'pass11', 0, 1, 1, 0, TRUE),
-('Pablo', 'pass12', 406, 768, 349, 0, FALSE),
-('Vale', 'pass13', 201, 10, 35, 0, FALSE),
-('Luis', 'pass14', 643, 43, 44, 1, FALSE),
-('Francisco', 'pass15', 765, 123, 31, 3, FALSE),
-('Gabriel', 'pass16', 2345, 101, 46, 2, FALSE),
-('Lucas', 'pass17', 432, 234, 123, 4, FALSE),
-('CPU8', 'pass18', 0, 13, 12, 0, TRUE),
-('Joseph', 'pass19', 107, 1, 2, 0, FALSE),
-('CPU9', 'pass20', 0, 1, 4, 0, TRUE),
-('CPU10', 'pass21', 0, 15, 2, 0, TRUE),
-('CPU11', 'pass22', 0, 1, 1, 0, TRUE),
-('CPU12', 'pass23', 0, 0, 0, 0, TRUE),
-('CPU13', 'pass24', 0, 8, 5, 0, TRUE),
-('CPU14', 'pass25', 0, 7, 19, 1, TRUE),
-('Isaac', 'pass26', 89, 5, 7, 1, FALSE),
-('Ricardo', 'pass27', 222, 2, 2, 2, FALSE),
-('Mateo', 'pass28', 9872, 589, 321, 0, FALSE),
-('Maria', 'pass29', 407, 10, 3, 0, FALSE),
-('Daniela', 'pass30', 543, 56, 39, 2, FALSE);
+('Paul', 'pass1', 1003, 23, 4, 1, 1021, FALSE, 500),
+('Diego', 'pass2', 243, 12, 14, 2, 586, FALSE, 120),
+('Beto', 'pass3', 100, 3, 12, 0, 482, FALSE, 100),
+('CPU1', 'pass4', 0, 2, 1, 0, 387, TRUE, 100),
+('Paolo', 'pass5', 200, 5, 2, 0, 501, FALSE, 120),
+('CPU2', 'pass6', 0, 1, 4, 0, 341, TRUE, 100),
+('CPU3', 'pass7', 0, 10, 2, 0, 590, TRUE, 120),
+('CPU4', 'pass8', 0, 17, 1, 0, 732, TRUE, 160),
+('CPU5', 'pass9', 0, 15, 1, 0, 689, TRUE, 150),
+('CPU6', 'pass10', 0, 14, 1, 0, 654, TRUE, 150),
+('CPU7', 'pass11', 0, 1, 1, 0, 413, TRUE, 100),
+('Pablo', 'pass12', 406, 768, 349, 0, 2037, FALSE, 600),
+('Vale', 'pass13', 201, 10, 35, 0, 203, FALSE, 100),
+('Luis', 'pass14', 643, 43, 44, 1, 690, FALSE, 160),
+('Francisco', 'pass15', 765, 123, 31, 3, 1340, FALSE, 520),
+('Gabriel', 'pass16', 2345, 101, 46, 2, 1286, FALSE, 510),
+('Lucas', 'pass17', 432, 234, 123, 4, 1781, FALSE, 560),
+('CPU8', 'pass18', 0, 13, 12, 0, 502, TRUE, 120),
+('Joseph', 'pass19', 107, 1, 2, 0, 399, FALSE, 100),
+('CPU9', 'pass20', 0, 1, 4, 0, 351, TRUE, 100),
+('CPU10', 'pass21', 0, 15, 2, 0, 523, TRUE, 130),
+('CPU11', 'pass22', 0, 1, 1, 0, 413, TRUE, 100),
+('CPU12', 'pass23', 0, 0, 0, 0, 400, TRUE, 100),
+('CPU13', 'pass24', 0, 8, 5, 0, 567, TRUE, 130),
+('CPU14', 'pass25', 0, 7, 19, 1, 403, TRUE, 100),
+('Isaac', 'pass26', 89, 5, 7, 1, 467, FALSE, 110),
+('Ricardo', 'pass27', 222, 2, 2, 2, 433, FALSE, 100),
+('Mateo', 'pass28', 9872, 589, 321, 0, 2433, FALSE, 600),
+('Maria', 'pass29', 407, 10, 3, 0, 516, FALSE, 120),
+('Daniela', 'pass30', 543, 56, 39, 2, 745, FALSE, 170);
 -- Consulta Tabla Usuario
 SELECT * FROM Usuario;
 
@@ -176,95 +176,49 @@ JOIN Carta C ON IC.id_carta = C.id_carta;
 
 -- Insertar Datos Tabla Formacion
 -- Solo van a existir 5 formaciones dentro del juego
-INSERT INTO Formacion (TipoDeFormacion, Descripcion)
+INSERT INTO Formacion (TipoDeFormacion, pos1, cord1, pos2, cord2, pos3, cord3, pos4, cord4, pos5, cord5, pos6, cord6, pos7, cord7)
 VALUES
-('3-2-1', '1 portero, 3 defensas, 2 medioscampos y 1 delantero'),
-('3-1-2', '1 portero, 3 defensas, 1 mediocampo y 2 delanteros'),
-('2-3-1', '1 portero, 2 defensas, 3 mediocampos y 1 delantero'),
-('2-2-2', '1 portero, 2 defensas, 2 mediocampos y 2 delanteros'),
-('2-1-3', '1 portero, 2 defensas, 1 mediocampo y 3 delanteros');
+('3-2-1', 'GK', '-560, 0', 'DFC', '-404, 0', 'DFC', '-404, -230', 'DFC', '-404, 230', 'MC', '-260, -124', 'MC', '-260, 124', 'DC', '-119, 0'),
+('3-1-2', 'GK', '-560, 0', 'DFC', '-404, 0', 'DFC', '-404, -230', 'DFC', '-404, 230', 'MC', '-255, 0', 'DC', '-119, -124', 'DC', '-119, 124'),
+('2-3-1', 'GK', '-560, 0', 'DFC', '-404, 146', 'DFC', '-404, -146', 'MC', '-260, 0', 'MC', '-260, -221', 'MC', '-260, 221', 'DC', '-108, 0'),
+('2-2-2', 'GK', '-560, 0', 'DFC', '-404, 146', 'DFC', '-404, -146', 'MC', '-260, -221', 'MC', '-260, 221', 'DC', '-115, 90', 'DC', '-115, -90'),
+('2-1-3', 'GK', '-560, 0', 'DFC', '-404, 146', 'DFC', '-404, -146', 'MC', '-260, 0', 'DC', '-108, 0', 'DC', '-108, -220', 'DC', '-108, 220');
 -- Consulta Tabla Formación
 SELECT * FROM Formacion;
 
--- Insertar Datos TacticaJuego
-INSERT INTO TacticaJuego (id_formacion, id_usuario)
-VALUES
-(1, 1),
-(1, 2),
-(1, 3),
-(1, 4), 
-(1, 5),
-(2, 6),
-(2, 7),
-(2, 8),
-(2, 9),
-(2, 10),
-(3, 11),
-(3, 12),
-(3, 13),
-(3, 14),
-(3, 15),
-(4, 16),
-(4, 17),
-(4, 18),
-(4, 19),
-(4, 20),
-(5, 21),
-(5, 22),
-(5, 23),
-(5, 24),
-(5, 25),
-(1, 26),
-(2, 27),
-(3, 28),
-(4, 29),
-(5, 30);
--- Consultar Tabla TacticaJuego
-SELECT * FROM TacticaJuego;
-
--- Consulta de formaciones juntando tablas
-SELECT
-  U.Nombre AS NombreUsuario,
-  F.TipoDeFormacion,
-  F.Descripcion AS DescripcionFormacion,
-  TJ.id_tactica_juego
-FROM Usuario U
-JOIN TacticaJuego TJ ON U.id_usuario = TJ.id_usuario
-JOIN Formacion F ON TJ.id_formacion = F.id_formacion;
-
 -- Insertar Datos Tabla Turno
-INSERT INTO Partido (id_jugador1, id_jugador2, id_ganador, resultado)
+INSERT INTO Partido (id_jugador1, id_formacion_jugador1, id_jugador2, id_formacion_jugador2, id_ganador, id_formacion_ganador, resultado)
 VALUES
-(1, 2, 1, '4-3'),
-(1, 3, 1, '4-2'),
-(1, 23, 1, '4-3'),
-(2, 12, 2, '4-3'),
-(2, 30, 30, '4-3'),
-(2, 13, 2, '4-2'),
-(2, 10, 10, '4-1'),
-(3, 28, 3, '4-0'),
-(3, 27, 3, '4-0'),
-(3, 11, 11, '4-1'),
-(4, 29, 29, '4-3'),
-(4, 22, 22, '4-2'),
-(5, 13, 5, '4-3'),
-(5, 27, 27, '4-3'),
-(5, 30, 5, '4-3'),
-(6, 1, 6, '4-2'),
-(7, 23, 23, '4-1'),
-(7, 24, 24, '4-0'),
-(7, 26, 26, '4-0'),
-(7, 3, 7, '4-1'),
-(8, 14, 8, '4-3'),
-(8, 15, 15, '4-2'),
-(9, 16, 16, '4-3'),
-(9, 19, 9, '4-3'),
-(9, 20, 9, '4-3'),
-(10, 1, 10, '4-2'),
-(10, 4, 10, '4-1'),
-(10, 6, 6, '4-0'),
-(11, 5, 11, '4-0'),
-(11, 7, 7, '4-1');
+(1, 1, 2, 1, 1, 1, '4-3'),
+(1, 1, 3, 1, 1, 1, '4-2'),
+(1, 1, 23, 1, 1, 1, '4-3'),
+(2, 1, 12, 1, 2, 1, '4-3'),
+(2, 1, 30, 2, 30, 2, '4-3'),
+(2, 1, 13, 5, 2, 1, '4-2'),
+(2, 2, 10, 5, 10, 5, '4-1'),
+(3, 2, 28, 4, 3, 2, '4-0'),
+(3, 1, 27, 4, 3, 1, '4-0'),
+(3, 2, 11, 5, 11, 2, '4-1'),
+(4, 2, 29, 2, 29, 2, '4-3'),
+(4, 3, 22, 3, 22, 3, '4-2'),
+(5, 4, 13, 3, 5, 4, '4-3'),
+(5, 3, 27, 3, 27, 3, '4-3'),
+(5, 4, 30, 2, 5, 4, '4-3'),
+(6, 5, 1, 2, 6, 5, '4-2'),
+(7, 5, 23, 1, 23, 1, '4-1'),
+(7, 5, 24, 3, 24, 3, '4-0'),
+(7, 5, 26, 2, 26, 2, '4-0'),
+(7, 4, 3, 4, 7, 4, '4-1'),
+(8, 3, 14, 5, 8, 3, '4-3'),
+(8, 3, 15, 5, 15, 5, '4-2'),
+(9, 3, 16, 2, 16, 2, '4-3'),
+(9, 4, 19, 3, 9, 4, '4-3'),
+(9, 4, 20, 1, 9, 4, '4-3'),
+(10, 4, 1, 1, 10, 4, '4-2'),
+(10, 5, 4, 4, 10, 5, '4-1'),
+(10, 2, 6, 4, 6, 4, '4-0'),
+(11, 1, 5, 2, 11, 1, '4-0'),
+(11, 3, 7, 1, 7, 1, '4-1');
 -- Consulta Tabla Partido
 SELECT * FROM Partido;
 
